@@ -1,10 +1,16 @@
 import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './components/Home/Home'
+import Reservation from './components/Reservation/Reservation'
 
 function App() {
   return (
-    <div className="App">
-    <h1>Hello, Capstone</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/reservation" element={<Reservation />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
