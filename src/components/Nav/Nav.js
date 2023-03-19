@@ -1,10 +1,11 @@
 import './Style.css';
+import logo from './Logo.svg';
 import { Link } from 'react-router-dom'
 
 function Nav() {
   return (
-    <nav>
-      <img src="" alt=""/>
+    <nav class="font-karla">
+      <img src={logo} alt=""/>
       <ul>
         <li><Link to="/">HOME</Link></li>
         <li><Link to="#About">ABOUT</Link></li>

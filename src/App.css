@@ -41,3 +41,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.font-karla {
+  font-family: 'Karla';
+}
