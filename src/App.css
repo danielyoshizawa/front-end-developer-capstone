@@ -42,6 +42,36 @@ body {
   justify-content: center;
 }
 
+section {
+  width: 100%;
+  max-height: auto;
+}
+
 .font-karla {
   font-family: 'Karla';
+}
+
+.primary-bg-color-green {
+  background-color: #495E57;
+}
+
+.primary-color-green {
+  color: #495E57;
+}
+
+.primary-bg-color-yellow {
+  background-color: #F4CE14;
+}
+
+.primary-color-yellow {
+  color: #F4CE14;
+}
+
+
+.secundary-bg-color-white {
+  background-color: #EDEFEE;
+}
+
+.secundary-color-white {
+  color: #EDEFEE;
 }
