@@ -1,0 +1,21 @@
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+  max-width: 20rem;
+  border-radius: 1rem;
+}
+
+.menu-card .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-card img {
+  min-height: 15rem;
+  max-height: 15rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}

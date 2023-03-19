@@ -1,0 +1,15 @@
+.specials {
+  display: flex;
+  flex-direction: column;
+}
+
+.specials .header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.specials .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

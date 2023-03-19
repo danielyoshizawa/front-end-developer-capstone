@@ -67,11 +67,18 @@ section {
   color: #F4CE14;
 }
 
+.secondary-bg-color-white {
+  background-color: #FFFFFF;
+}
 
-.secundary-bg-color-white {
+.secondary-color-white {
+  color: #FFFFFF;
+}
+
+.secondary-bg-color-grey {
   background-color: #EDEFEE;
 }
 
-.secundary-color-white {
+.secondary-color-grey {
   color: #EDEFEE;
 }
