@@ -13,7 +13,7 @@ function Hero() {
         <button className="font-karla primary-bg-color-yellow primary-color-green">Reserve a table</button>
       </div>
       <div>
-        <img src={displayImg} alt="Image of our restaurant food presentation"/>
+        <img src={displayImg} alt="Our restaurant food presentation"/>
       </div>
     </section>
   )

@@ -1,0 +1,25 @@
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}
+
+.testimonial-card .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.testimonial-card .info-image img {
+  min-height: 8rem;
+  max-height: 8rem;
+
+}
+
+.testimonial-card .info-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 8rem;
+}
