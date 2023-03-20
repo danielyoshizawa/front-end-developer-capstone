@@ -1,0 +1,36 @@
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+
+.about .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.about .info p {
+  width: 20rem;
+}
+
+.about .image img {
+  width: 15rem;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.about .image {
+  display: grid;
+  grid-template-columns: 5rem 5rem 5rem 5rem 5rem;
+  grid-template-rows: 5rem 5rem 5rem 5rem 5rem;
+}
+
+#chefA {
+  grid-area: 1 / 3 / span 3 / span 3;
+}
+
+#chefB {
+  grid-area: 2 / 1 / span 3 / span 3;
+}
