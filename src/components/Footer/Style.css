@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.footer .main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+
+.footer .column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer .copyright{
+  align-self: center;
+  padding-top: 2rem;
+}
