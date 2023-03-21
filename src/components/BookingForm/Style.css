@@ -1,0 +1,21 @@
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem;
+  row-gap: 2rem;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.booking-form .field{
+  white-space: nowrap;
+}
+input, select, textarea {
+  border-radius: 1rem;
+}
