@@ -1,0 +1,42 @@
+.occasion-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 2rem;
+}
+
+.occasion-menu .selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.occasion-menu .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card {
+  padding-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.card img {
+  min-height: 8rem;
+  max-height: 8rem;
+  width: 100%;
+  min-width: 12rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
