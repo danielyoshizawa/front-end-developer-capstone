@@ -30,7 +30,7 @@ const items = [
   }
 ]
 
-function OccasionMenu() {
+function OccasionMenu({handleInputChange}) {
   return(
     <div className="occasion-menu primary-bg-color-green secondary-color-grey">
       <div className="selection">
@@ -38,7 +38,7 @@ function OccasionMenu() {
           <h2>Select Occasion</h2>
         </div>
         <div>
-          <select className="primary-color-green">
+          <select name="occasion" className="primary-color-green" onChange={handleInputChange}>
             <option>Occasion</option>
             <option>Birthday</option>
             <option>Engagement</option>

@@ -1,7 +1,7 @@
 import './Style.css'
 import creditCard from './Images/CreditCard.png'
 
-function Payment() {
+function Payment({handleInputChange}) {
   return(
     <div className="payment">
       <div className="struct">
@@ -12,16 +12,40 @@ function Payment() {
           </>
           <>
             <label>Name
-              <input className="secondary-bg-color-grey" type="text" placeholder="Name" />
+              <input
+                className="secondary-bg-color-grey"
+                name="ccName"
+                type="text"
+                placeholder="Name"
+                onChange={handleInputChange}
+              />
             </label>
             <label>Card Number
-              <input className="secondary-bg-color-grey" type="number" placeholder="Card Number" />
+              <input
+                className="secondary-bg-color-grey"
+                name="ccNumber"
+                type="number"
+                placeholder="Card Number"
+                onChange={handleInputChange}
+              />
             </label>
             <label>Security Code
-              <input className="secondary-bg-color-grey" type="number" placeholder="Security Code" />
+              <input
+                className="secondary-bg-color-grey"
+                name="ccCode"
+                type="number"
+                placeholder="Security Code"
+                onChange={handleInputChange}
+              />
             </label>
             <label>Expiration Date
-              <input className="secondary-bg-color-grey" type="date" placeholder="Expiration Date" />
+              <input
+                className="secondary-bg-color-grey"
+                name="ccDate"
+                type="date"
+                placeholder="Expiration Date"
+                onChange={handleInputChange}
+              />
             </label>
           </>
           <>
@@ -34,7 +58,12 @@ function Payment() {
         </div>
       </div>
       <div className="button">
-        <input className="primary-bg-color-yellow primary-color-green" type="submit" value="Make Reservation" />
+        <input
+          className="primary-bg-color-yellow primary-color-green"
+          name="submit"
+          type="submit"
+          value="Make Reservation"
+        />
       </div>
     </div>
   )
