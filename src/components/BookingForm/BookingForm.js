@@ -1,6 +1,7 @@
 import './Style.css'
+import { Field } from "formik"
 
-function BookingForm({handleInputChange}) {
+function BookingForm() {
   return(
     <section className="booking-form">
       <div>
@@ -9,63 +10,59 @@ function BookingForm({handleInputChange}) {
       </div>
         <span className="field">
           <label>Name
-            <input
+            <Field
               className="secondary-bg-color-grey"
               name="name"
-              type="text"
-              placeholder="name"
-              onChange={handleInputChange}
+              placeholder="Name"
               />
           </label>
         </span>
         <span className="field">
           <label>Guests
-            <input
+            <Field
               className="secondary-bg-color-grey"
               name="guests"
               type="number"
               placeholder="# of guests"
               min="1"
               max="10"
-              onChange={handleInputChange}
             />
           </label>
         </span>
         <span className="field">
           <label>Date
-            <input
+            <Field
               className="secondary-bg-color-grey"
               name="date"
               type="date"
               placeholder="Date"
-              onChange={handleInputChange}
             />
           </label>
         </span>
         <label>Time
-          <select className="secondary-bg-color-grey" name="time" onChange={handleInputChange}>
+          <Field className="secondary-bg-color-grey" name="time" as="select">
             <option>17:00</option>
             <option>18:00</option>
             <option>19:00</option>
             <option>20:00</option>
             <option>21:00</option>
             <option>22:00</option>
-          </select>
+          </Field>
         </label>
         <label>Table Placement
-          <select className="secondary-bg-color-grey" name="placement" onChange={handleInputChange}>
+          <Field className="secondary-bg-color-grey" name="placement" as="select">
             <option>Indoors</option>
             <option>Outdoors</option>
             <option>Balcone</option>
-          </select>
+          </Field>
         </label>
         <label>Comments
-          <textarea
+          <Field
             className="secondary-bg-color-grey"
             name="comments"
             placeholder="Please tell us anything we should know to make your experience better."
             cols="100"
-            onChange={handleInputChange}
+            component="textarea"
           />
         </label>
     </section>

@@ -11,21 +11,21 @@ const items = [
     price : "12.99",
     description: "The famous greek salad of cripsy lettuce, pepper, olives and our Chicago Style feta cheese, grarnished with crunchy garlic and rosemary croutons.",
     img: greek,
-    alt: "Greek Salad Image",
+    alt: "Greek Salad",
   },
   {
     name : "Bruchetta",
     price : "5.99",
     description: "Our Bruchetta is made from grilled bread that has been smeared with garlic and sessoned with salt and olive oil.",
     img: bruchetta,
-    alt: "Bruchetta Image",
+    alt: "Bruchetta",
   },
   {
     name : "Lemon Dessert",
     price : "5.00",
     description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is an authentic as can be imagined.",
     img: lemonDessert,
-    alt: "Lemon Dessert Image",
+    alt: "Lemon Dessert",
   }
 ]
 

@@ -1,7 +1,8 @@
 import './Style.css'
+import { Field } from "formik"
 import creditCard from './Images/CreditCard.png'
 
-function Payment({handleInputChange}) {
+function Payment() {
   return(
     <div className="payment">
       <div className="struct">
@@ -12,39 +13,35 @@ function Payment({handleInputChange}) {
           </>
           <>
             <label>Name
-              <input
+              <Field
                 className="secondary-bg-color-grey"
                 name="ccName"
                 type="text"
                 placeholder="Name"
-                onChange={handleInputChange}
               />
             </label>
             <label>Card Number
-              <input
+              <Field
                 className="secondary-bg-color-grey"
                 name="ccNumber"
                 type="number"
                 placeholder="Card Number"
-                onChange={handleInputChange}
               />
             </label>
             <label>Security Code
-              <input
+              <Field
                 className="secondary-bg-color-grey"
                 name="ccCode"
                 type="number"
                 placeholder="Security Code"
-                onChange={handleInputChange}
               />
             </label>
             <label>Expiration Date
-              <input
+              <Field
                 className="secondary-bg-color-grey"
                 name="ccDate"
                 type="date"
                 placeholder="Expiration Date"
-                onChange={handleInputChange}
               />
             </label>
           </>
@@ -58,12 +55,13 @@ function Payment({handleInputChange}) {
         </div>
       </div>
       <div className="button">
-        <input
+        <button
           className="primary-bg-color-yellow primary-color-green"
           name="submit"
           type="submit"
-          value="Make Reservation"
-        />
+        >
+          Make Reservation
+        </button>
       </div>
     </div>
   )

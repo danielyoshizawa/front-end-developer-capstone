@@ -1,5 +1,6 @@
 import './Style.css'
 import OccasionCard from './OccasionCard'
+import { Field } from "formik"
 // TODO = Refactor to a more dynamic way
 import greek from './Images/greek_salad.jpg'
 import bruchetta from './Images/bruchetta.svg'
@@ -38,13 +39,13 @@ function OccasionMenu({handleInputChange}) {
           <h2>Select Occasion</h2>
         </div>
         <div>
-          <select name="occasion" className="primary-color-green" onChange={handleInputChange}>
+          <Field name="occasion" className="primary-color-green" as="select">
             <option>Occasion</option>
             <option>Birthday</option>
             <option>Engagement</option>
             <option>Anniversary</option>
             <option>Casual</option>
-          </select>
+          </Field>
         </div>
       </div>
       <div className="menu">

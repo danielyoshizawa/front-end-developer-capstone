@@ -3,11 +3,10 @@ import Hero from '../Hero/Hero'
 import BookingForm from '../BookingForm/BookingForm'
 import OccasionMenu from '../OccasionMenu/OccasionMenu'
 import Payment from '../Payment/Payment'
-import { useState } from 'react'
+import { Formik, Form } from "formik"
 
 function Reservation() {
-  const [formData, setFormData] = useState([])
-  const [formInputData, setFormInputData] = useState({
+  const formInputData = {
     name      : '',
     guests    : '',
     date      : '',
@@ -19,27 +18,26 @@ function Reservation() {
     ccNumber  : '',
     ccCode    : '',
     ccDate    : '',
-  })
-  const handleInputChange = (ev) => {
-    const inputFieldValue = ev.target.value
-    const inputFieldName = ev.target.name
-    const newInputValue = {...formInputData, [inputFieldName]: inputFieldValue}
-    setFormInputData(newInputValue)
   }
 
-  const handleFormSubmit = (ev) => {
-    ev.preventDefault()
-    console.log(formInputData)
+  const handleFormSubmit = (values) => {
+    // ev.preventDefault()
+    console.log(values)
   }
 
   return(
     <Layout>
       <Hero />
-      <form onSubmit={handleFormSubmit}>
-        <BookingForm handleInputChange={handleInputChange} />
-        <OccasionMenu handleInputChange={handleInputChange} />
-        <Payment handleInputChange={handleInputChange} />
-      </form>
+      <Formik
+        initialValues={formInputData}
+        onSubmit={handleFormSubmit}
+      >
+        <Form>
+          <BookingForm />
+          <OccasionMenu />
+          <Payment />
+        </Form>
+      </Formik>
     </Layout>
   )
 }
