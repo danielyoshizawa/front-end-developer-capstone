@@ -31,7 +31,9 @@ const items = [
   }
 ]
 
-function OccasionMenu({handleInputChange}) {
+function OccasionMenu(props) {
+  const {errors, touched} = props.validation
+
   return(
     <div className="occasion-menu primary-bg-color-green secondary-color-grey">
       <div className="selection">
@@ -46,6 +48,9 @@ function OccasionMenu({handleInputChange}) {
             <option>Anniversary</option>
             <option>Casual</option>
           </Field>
+          {errors.occasion && touched.occasion ? (
+            <div className="error">{errors.occasion}</div>
+          ) : null }
         </div>
       </div>
       <div className="menu">

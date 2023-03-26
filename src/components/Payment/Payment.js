@@ -2,7 +2,9 @@ import './Style.css'
 import { Field } from "formik"
 import creditCard from './Images/CreditCard.png'
 
-function Payment() {
+function Payment(props) {
+  const {errors, touched} = props.validation
+
   return(
     <div className="payment">
       <div className="struct">
@@ -19,6 +21,9 @@ function Payment() {
                 type="text"
                 placeholder="Name"
               />
+              {errors.ccName && touched.ccName ? (
+                <div className="error">{errors.ccName}</div>
+              ) : null }
             </label>
             <label>Card Number
               <Field
@@ -27,6 +32,9 @@ function Payment() {
                 type="number"
                 placeholder="Card Number"
               />
+              {errors.ccNumber && touched.ccNumber ? (
+                <div className="error">{errors.ccNumber}</div>
+              ) : null }
             </label>
             <label>Security Code
               <Field
@@ -35,6 +43,9 @@ function Payment() {
                 type="number"
                 placeholder="Security Code"
               />
+              {errors.ccCode && touched.ccCode ? (
+                <div className="error">{errors.ccCode}</div>
+              ) : null }
             </label>
             <label>Expiration Date
               <Field
@@ -43,6 +54,9 @@ function Payment() {
                 type="date"
                 placeholder="Expiration Date"
               />
+              {errors.ccDate && touched.ccDate ? (
+                <div className="error">{errors.ccDate}</div>
+              ) : null }
             </label>
           </>
           <>

@@ -1,7 +1,8 @@
 import './Style.css'
 import { Field } from "formik"
 
-function BookingForm() {
+function BookingForm(props) {
+  const {errors, touched} = props.validation
   return(
     <section className="booking-form">
       <div>
@@ -14,7 +15,11 @@ function BookingForm() {
               className="secondary-bg-color-grey"
               name="name"
               placeholder="Name"
+              required
               />
+              {errors.name && touched.name ? (
+                <div className="error">{errors.name}</div>
+              ) : null }
           </label>
         </span>
         <span className="field">
@@ -26,7 +31,11 @@ function BookingForm() {
               placeholder="# of guests"
               min="1"
               max="10"
+              required
             />
+            {errors.guests && touched.guests ? (
+              <div className="error">{errors.guests}</div>
+            ) : null }
           </label>
         </span>
         <span className="field">
@@ -36,11 +45,15 @@ function BookingForm() {
               name="date"
               type="date"
               placeholder="Date"
+              required
             />
+            {errors.date && touched.date ? (
+              <div className="error">{errors.date}</div>
+            ) : null }
           </label>
         </span>
         <label>Time
-          <Field className="secondary-bg-color-grey" name="time" as="select">
+          <Field className="secondary-bg-color-grey" name="time" as="select" required>
             <option>17:00</option>
             <option>18:00</option>
             <option>19:00</option>
@@ -48,6 +61,9 @@ function BookingForm() {
             <option>21:00</option>
             <option>22:00</option>
           </Field>
+          {errors.time && touched.time ? (
+            <div className="error">{errors.time}</div>
+          ) : null }
         </label>
         <label>Table Placement
           <Field className="secondary-bg-color-grey" name="placement" as="select">
@@ -55,6 +71,9 @@ function BookingForm() {
             <option>Outdoors</option>
             <option>Balcone</option>
           </Field>
+          {errors.placement && touched.placement ? (
+            <div className="error">{errors.placement}</div>
+          ) : null }
         </label>
         <label>Comments
           <Field
@@ -64,6 +83,9 @@ function BookingForm() {
             cols="100"
             component="textarea"
           />
+          {errors.comments && touched.comments ? (
+            <div className="error">{errors.comments}</div>
+          ) : null }
         </label>
     </section>
   )
