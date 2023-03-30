@@ -22,10 +22,11 @@ const validationSchema = Yup.object({
 })
 
 function Reservation() {
+  const today = new Date().toISOString().split('T')[0]
   const formInputData = {
     name      : '',
     guests    : '1',
-    date      : '',
+    date      : today,
     time      : '19:00',
     placement : 'Indoors',
     comments  : '',
@@ -49,11 +50,11 @@ function Reservation() {
         validationSchema={validationSchema}
         onSubmit={handleFormSubmit}
       >
-        {({errors, touched}) => (
+        {formik => (
           <Form>
-            <BookingForm validation={{errors, touched}} />
-            <OccasionMenu validation={{errors, touched}} />
-            <Payment validation={{errors, touched}} />
+            <BookingForm formik={formik} />
+            <OccasionMenu formik={formik} />
+            <Payment formik={formik} />
           </Form>
         )}
       </Formik>

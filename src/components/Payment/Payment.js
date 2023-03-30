@@ -3,7 +3,7 @@ import { Field } from "formik"
 import creditCard from './Images/CreditCard.png'
 
 function Payment(props) {
-  const {errors, touched} = props.validation
+  const formik = props.formik
 
   return(
     <div className="payment">
@@ -21,8 +21,8 @@ function Payment(props) {
                 type="text"
                 placeholder="Name"
               />
-              {errors.ccName && touched.ccName ? (
-                <div className="error">{errors.ccName}</div>
+              {formik.errors.ccName && formik.touched.ccName ? (
+                <div className="error">{formik.errors.ccName}</div>
               ) : null }
             </label>
             <label>Card Number
@@ -32,8 +32,8 @@ function Payment(props) {
                 type="number"
                 placeholder="Card Number"
               />
-              {errors.ccNumber && touched.ccNumber ? (
-                <div className="error">{errors.ccNumber}</div>
+              {formik.errors.ccNumber && formik.touched.ccNumber ? (
+                <div className="error">{formik.errors.ccNumber}</div>
               ) : null }
             </label>
             <label>Security Code
@@ -43,8 +43,8 @@ function Payment(props) {
                 type="number"
                 placeholder="Security Code"
               />
-              {errors.ccCode && touched.ccCode ? (
-                <div className="error">{errors.ccCode}</div>
+              {formik.errors.ccCode && formik.touched.ccCode ? (
+                <div className="error">{formik.errors.ccCode}</div>
               ) : null }
             </label>
             <label>Expiration Date
@@ -54,8 +54,8 @@ function Payment(props) {
                 type="date"
                 placeholder="Expiration Date"
               />
-              {errors.ccDate && touched.ccDate ? (
-                <div className="error">{errors.ccDate}</div>
+              {formik.errors.ccDate && formik.touched.ccDate ? (
+                <div className="error">{formik.errors.ccDate}</div>
               ) : null }
             </label>
           </>

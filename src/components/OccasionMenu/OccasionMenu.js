@@ -32,7 +32,7 @@ const items = [
 ]
 
 function OccasionMenu(props) {
-  const {errors, touched} = props.validation
+  const formik = props.formik
 
   return(
     <div className="occasion-menu primary-bg-color-green secondary-color-grey">
@@ -48,8 +48,8 @@ function OccasionMenu(props) {
             <option>Anniversary</option>
             <option>Casual</option>
           </Field>
-          {errors.occasion && touched.occasion ? (
-            <div className="error">{errors.occasion}</div>
+          {formik.errors.occasion && formik.touched.occasion ? (
+            <div className="error">{formik.errors.occasion}</div>
           ) : null }
         </div>
       </div>

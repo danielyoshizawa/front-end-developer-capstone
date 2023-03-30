@@ -1,8 +1,54 @@
 import './Style.css'
 import { Field } from "formik"
+import { useState, useEffect } from 'react'
+
+// External JS file
+// This is not working in any way I tried
+// - <script> on index
+// - changing cdn to get application/json
+// - lazy loading
+// - useEffect
+// - nothing works
+const seededRandom = function (seed) {
+    var m = 2**35 - 31;
+    var a = 185852;
+    var s = seed % m;
+    return function () {
+        return (s = s * a % m) / m;
+    };
+}
+
+const fetchAPI = function(date) {
+    let result = [];
+    let random = seededRandom(date.getDate());
+
+    for(let i = 17; i <= 23; i++) {
+        if(random() < 0.5) {
+            result.push(i + ':00');
+        }
+        if(random() < 0.5) {
+            result.push(i + ':30');
+        }
+    }
+    return result;
+};
+
+const submitAPI = function(formData) {
+    return true;
+};
 
 function BookingForm(props) {
-  const {errors, touched} = props.validation
+  const formik = props.formik
+  const [times, setTimes] = useState(initializeTimes(formik.getFieldProps("date").value))
+
+  function initializeTimes(date) {
+    return fetchAPI(new Date(date))
+  }
+
+  function updateTimes(date) {
+    setTimes(initializeTimes(date))
+  }
+
   return(
     <section className="booking-form">
       <div>
@@ -17,8 +63,8 @@ function BookingForm(props) {
               placeholder="Name"
               required
               />
-              {errors.name && touched.name ? (
-                <div className="error">{errors.name}</div>
+              {formik.errors.name && formik.touched.name ? (
+                <div className="error">{formik.errors.name}</div>
               ) : null }
           </label>
         </span>
@@ -33,8 +79,8 @@ function BookingForm(props) {
               max="10"
               required
             />
-            {errors.guests && touched.guests ? (
-              <div className="error">{errors.guests}</div>
+            {formik.errors.guests && formik.touched.guests ? (
+              <div className="error">{formik.errors.guests}</div>
             ) : null }
           </label>
         </span>
@@ -44,25 +90,25 @@ function BookingForm(props) {
               className="secondary-bg-color-grey"
               name="date"
               type="date"
-              placeholder="Date"
+              onChange={e => {
+                updateTimes(e.target.value)
+                formik.setFieldValue("date", e.target.value)
+              }}
               required
             />
-            {errors.date && touched.date ? (
-              <div className="error">{errors.date}</div>
+            {formik.errors.date && formik.touched.date ? (
+              <div className="error">{formik.errors.date}</div>
             ) : null }
           </label>
         </span>
         <label>Time
           <Field className="secondary-bg-color-grey" name="time" as="select" required>
-            <option>17:00</option>
-            <option>18:00</option>
-            <option>19:00</option>
-            <option>20:00</option>
-            <option>21:00</option>
-            <option>22:00</option>
+            { times.map((item) =>
+              <option key={item} value={item}>{item}</option>
+            )}
           </Field>
-          {errors.time && touched.time ? (
-            <div className="error">{errors.time}</div>
+          {formik.errors.time && formik.touched.time ? (
+            <div className="error">{formik.errors.time}</div>
           ) : null }
         </label>
         <label>Table Placement
@@ -71,8 +117,8 @@ function BookingForm(props) {
             <option>Outdoors</option>
             <option>Balcone</option>
           </Field>
-          {errors.placement && touched.placement ? (
-            <div className="error">{errors.placement}</div>
+          {formik.errors.placement && formik.touched.placement ? (
+            <div className="error">{formik.errors.placement}</div>
           ) : null }
         </label>
         <label>Comments
@@ -83,8 +129,8 @@ function BookingForm(props) {
             cols="100"
             component="textarea"
           />
-          {errors.comments && touched.comments ? (
-            <div className="error">{errors.comments}</div>
+          {formik.errors.comments && formik.touched.comments ? (
+            <div className="error">{formik.errors.comments}</div>
           ) : null }
         </label>
     </section>
