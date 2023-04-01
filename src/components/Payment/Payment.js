@@ -73,6 +73,7 @@ function Payment(props) {
           className="primary-bg-color-yellow primary-color-green"
           name="submit"
           type="submit"
+          onClick={ formik.handleFormSubmit }
         >
           Make Reservation
         </button>

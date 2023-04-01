@@ -5,7 +5,9 @@ import OccasionMenu from '../OccasionMenu/OccasionMenu'
 import Payment from '../Payment/Payment'
 import { Formik, Form } from "formik"
 import * as Yup from 'yup'
+import { useNavigate } from 'react-router-dom'
 import './Style.css'
+import { submitAPI } from '../../helpers/FakeApi'
 
 const validationSchema = Yup.object({
   name      : Yup.string().required(),
@@ -17,7 +19,7 @@ const validationSchema = Yup.object({
   occasion  : Yup.string(),
   ccName    : Yup.string().required(),
   ccNumber  : Yup.number().required(),
-  ccCode    : Yup.number().min(3).max(4).required(),
+  ccCode    : Yup.number().min(3).required(),
   ccDate    : Yup.date().required(),
 })
 
@@ -36,10 +38,16 @@ function Reservation() {
     ccCode    : '',
     ccDate    : '',
   }
+  const navigate = useNavigate()
+
+  const submitForm = (formData) => {
+    if (submitAPI(formData)) {
+      navigate("/confirmation")
+    }
+  }
 
   const handleFormSubmit = (values) => {
-    // ev.preventDefault()
-    console.log(values)
+    submitForm(values)
   }
 
   return(
