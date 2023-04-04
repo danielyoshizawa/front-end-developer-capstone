@@ -25,11 +25,11 @@ nav a {
 }
 
 nav.font-karla {
-  font-size: 18pt;
+  font-size: 1.5rem;
   font-weight: medium;
 }
 
 /* TODO : For now keep it plain, style will come later */
-nav a:link, a:hover, a:visited, a:active {
+/* nav a:link, a:hover, a:visited, a:active {
   color: black;
-}
+} */

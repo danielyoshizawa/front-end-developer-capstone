@@ -1,18 +1,18 @@
 import './Style.css';
 import logo from './Logo.svg';
-import { NavLink } from 'react-router-dom'
+import CustomNavLink from './CustomNavLink'
 
 function Nav() {
   return (
     <nav className="font-karla">
       <img src={logo} alt="Little Lemon Logo"/>
       <ul>
-        <li><NavLink to="/">HOME</NavLink></li>
-        <li><NavLink to="#About">ABOUT</NavLink></li>
-        <li><NavLink to="#Menu">MENU</NavLink></li>
-        <li><NavLink to="/reservation">RESERVATIONS</NavLink></li>
-        <li><NavLink to="/order_online">ORDER ONLINE</NavLink></li>
-        <li><NavLink to="/login">LOG IN</NavLink></li>
+        <li><CustomNavLink to="/">HOME</CustomNavLink></li>
+        <li><CustomNavLink to="/about">ABOUT</CustomNavLink></li>
+        <li><CustomNavLink to="/menu">MENU</CustomNavLink></li>
+        <li><CustomNavLink to="/reservation">RESERVATIONS</CustomNavLink></li>
+        <li><CustomNavLink to="/order_online">ORDER ONLINE</CustomNavLink></li>
+        <li><CustomNavLink to="/login">LOG IN</CustomNavLink></li>
       </ul>
     </nav>
   )
