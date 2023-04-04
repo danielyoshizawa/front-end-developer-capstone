@@ -27,7 +27,8 @@ function BookingForm(props) {
               className="secondary-bg-color-grey"
               name="name"
               placeholder="Name"
-              required
+              type="text"
+              onChange={formik.onChange}
               />
               {formik.errors.name && formik.touched.name ? (
                 <div className="error">{formik.errors.name}</div>
@@ -43,7 +44,7 @@ function BookingForm(props) {
               placeholder="# of guests"
               min="1"
               max="10"
-              required
+              onChange={formik.onChange}
             />
             {formik.errors.guests && formik.touched.guests ? (
               <div className="error">{formik.errors.guests}</div>
@@ -60,7 +61,6 @@ function BookingForm(props) {
                 updateTimes(e.target.value)
                 formik.setFieldValue("date", e.target.value)
               }}
-              required
             />
             {formik.errors.date && formik.touched.date ? (
               <div className="error">{formik.errors.date}</div>
@@ -68,7 +68,7 @@ function BookingForm(props) {
           </label>
         </span>
         <label>Time
-          <Field className="secondary-bg-color-grey" name="time" as="select" required>
+          <Field className="secondary-bg-color-grey" name="time" as="select">
             { times.map((item) =>
               <option key={item} value={item}>{item}</option>
             )}

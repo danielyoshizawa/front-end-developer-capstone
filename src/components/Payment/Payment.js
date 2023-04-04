@@ -74,6 +74,7 @@ function Payment(props) {
           name="submit"
           type="submit"
           onClick={ formik.handleFormSubmit }
+          aria-label="On Click"
         >
           Make Reservation
         </button>

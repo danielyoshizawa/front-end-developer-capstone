@@ -1,4 +1,3 @@
-import Layout from '../Layout/Layout'
 import Hero from '../Hero/Hero'
 import BookingForm from '../BookingForm/BookingForm'
 import OccasionMenu from '../OccasionMenu/OccasionMenu'
@@ -8,20 +7,7 @@ import * as Yup from 'yup'
 import { useNavigate } from 'react-router-dom'
 import './Style.css'
 import { submitAPI } from '../../helpers/FakeApi'
-
-const validationSchema = Yup.object({
-  name      : Yup.string().required(),
-  guests    : Yup.number().min(1).max(10).required(),
-  date      : Yup.date().required(),
-  time      : Yup.string().required(),
-  placement : Yup.string(),
-  comments  : Yup.string(),
-  occasion  : Yup.string(),
-  ccName    : Yup.string().required(),
-  ccNumber  : Yup.number().required(),
-  ccCode    : Yup.number().min(3).required(),
-  ccDate    : Yup.date().required(),
-})
+import ValidationSchema from './ValidationSchema'
 
 function Reservation() {
   const today = new Date().toISOString().split('T')[0]
@@ -51,11 +37,11 @@ function Reservation() {
   }
 
   return(
-    <Layout>
+    <>
       <Hero />
       <Formik
         initialValues={formInputData}
-        validationSchema={validationSchema}
+        validationSchema={ValidationSchema}
         onSubmit={handleFormSubmit}
       >
         {formik => (
@@ -66,7 +52,7 @@ function Reservation() {
           </Form>
         )}
       </Formik>
-    </Layout>
+    </>
   )
 }
 
